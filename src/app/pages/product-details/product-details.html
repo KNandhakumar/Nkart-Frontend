@@ -1,4 +1,4 @@
-<div class="min-h-screen bg-gray-100 py-10">
+<div *ngIf="product" class="min-h-screen bg-gray-100 py-10">
     
     <div class="max-w-6xl mx-auto bg-white rounded-xl shadow-lg p-8">
 
@@ -17,8 +17,9 @@
                 <h2 class="text-3xl text-emerald-600 font-bold mb-8">$ {{product.price}}</h2>
 
                 <div class="flex gap-4">
-                    <button class="bg-yellow-500 text-white px-8 py-3 rounded-lg">Add to Cart</button>
-                    <button class="bg-emerald-600 text-white px-8 py-3 rounded-lg">Buy Now</button>
+                    <button (click)="addToCart()" class="bg-yellow-500 cursor-pointer text-white px-8 py-3 rounded-lg">Add To Cart</button>
+                    <button [routerLink]="['/cart']" class="bg-sky-500 cursor-pointer text-white px-8 py-3 rounded-lg">Go To Cart</button>
+                    <button class="bg-emerald-600 cursor-pointer text-white px-8 py-3 rounded-lg">Buy Now</button>
                 </div>
               </div>
         </div>
